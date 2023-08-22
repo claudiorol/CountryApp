@@ -20,7 +20,11 @@
             <td>{{ country.name.common }}</td>
             <td>{{ country.population | number }}</td>
             <td>{{ country.capital }}</td>
-            <td></td>
+            <td>
+                <a [routerLink]='[ "/countries/by/", country.cca3 ]'>See more</a>
+            </td>
+
+
         </tr>
     </table>
 </ng-template>
