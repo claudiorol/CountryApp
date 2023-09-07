@@ -1,13 +1,11 @@
 <ng-template #loading>
-    <div class="alert alert-info text-center">
-        Loading...
-    </div>
+    <shared-loading-spinner></shared-loading-spinner>
 </ng-template>
 
 <div *ngIf="currentCountry; else loading">
     <div class="row">
         <div class="col-12">
-            <h2>País: {{ currentCountry.name.common }}</h2>
+            <h2>Country: {{ currentCountry.name.common }}</h2>
         </div>
     </div>
     <div class="row">
@@ -29,10 +27,10 @@
                     <strong>Population: </strong>{{ currentCountry.population | number }}
                 </li>
                 <li class="list-group-item">
-                    <strong>Capital: </strong>{{ currentCountry.capital }}
+                    <strong>Area: </strong>{{ currentCountry.area | number }} km<sup>2</sup>
                 </li>
                 <li class="list-group-item">
-                    <strong>Area: </strong>{{ currentCountry.area | number }} km<sup>2</sup>
+                    <strong>Capital: </strong>{{ currentCountry.capital }}
                 </li>
             </ul>
             

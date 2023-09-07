@@ -1,11 +1,15 @@
 <h2>By Continent</h2>
 <hr/>
 <div class="row">
-    <div class="col">
-        <shared-search-box
-            placeholder="Search by continent..."
-            (onValue)="searchByContinent($event)">
-        </shared-search-box>
+    <div class="col text-center">
+        <button 
+            *ngFor="let continent of continents"
+
+            class="btn btn-outline-primary mx-2"
+            [ngClass]="{ 'btn-primary': selectedContinent === continent }"
+            (click)="searchByContinent(continent)">
+            {{ continent }}
+        </button>
     </div>
 </div>
 
@@ -13,5 +17,6 @@
     <div class="col">
         <hr/>
         <countries-table [countries]="countries"></countries-table>
+        <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
     </div>
 </div>
